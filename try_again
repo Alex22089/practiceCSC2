@@ -1,0 +1,152 @@
+#Number In Different Language
+#Alex McCoy
+
+#dictionary for all the spanish values
+spanish = {1 : 'Uno' , 2 : 'Dos' , 3 : 'Tres' , 4 : 'Cuatro' , 5 : 'Cinco' , 6 : 'Seis' , 7 : 'Siete' , 8 : 'Ocho' , 9 : 'Nueve' , 10 : 'Diez'}
+french = {1 : 'Un' , 2 : 'Deux' , 3: 'Trois' , 4 : 'Quatre' , 5 : 'Cinq' , 6 : 'Six' , 7 : 'Sept' , 8 : 'Huit' , 9 : 'Neuf' , 10: 'Dix'}
+te_reo = {1 : 'Tahi' , 2 : 'Rua' , 3 : 'Toru' , 4 : 'Wha' , 5 : 'Rima' , 6 : 'Ono' , 7 : 'Whitu' , 8 : 'Waru' , 9 : 'Iwa' , 10 : 'Tekau'}
+danish = {1 : 'En' , 2 : 'To' , 3 : 'Tre' , 4 : 'Fire' , 5 : 'Fem' , 6 : 'Seks' , 7 : 'Syv' , 8 : 'Otte' , 9 : 'Ni' , 10 : 'Ti'}
+portuguese = {1 : 'Um' , 2 : 'Dois' , 3 : 'Tres' , 4 : 'Quatro' , 5 : 'Cinco' , 6 : 'Sei' , 7 : 'Sete' , 8 : 'Oito' , 9 : 'Nove' , 10 : 'Dez'}
+language = ""
+#checks if the input is an integer, if not, it prints That's not a number!, and reasks the question
+while True:
+    try: 
+        language = input('Spanish, French, Danish Te Reo, or Portuguese? ')
+        if language != 'Spanish' and language != 'French'and language != "Te Reo" and language != "Danish" and language != 'Portuguese':
+            print("That's not a valid language!")
+            continue
+    except ValueError:
+        print("That's not right!")
+        continue
+    else:
+        break
+
+while True:
+    try: 
+        x = int(input("Enter an integer 1 - 10: "))
+        if x > 10 or x <= 0:
+            print("That's not 1 to 10!")
+            continue
+    except ValueError:
+        print("That's not a number!")
+        continue
+    else:
+        break
+#checks if the input is numeric if no it loops and re-asks
+if language == 'Spanish':
+    if x == 1:
+        print(f'{x} in Spanish is {spanish[1]}') 
+    elif x == 2:
+        print(f'{x} in Spanish is {spanish[2]}')  
+    elif x == 3:
+        print(f'{x} in Spanish is {spanish[3]}')  
+    elif x == 4:
+        print(f'{x} in Spanish is {spanish[4]}') 
+    elif x == 5:
+        print(f'{x} in Spanish is {spanish[5]}') 
+    elif x == 6:
+        print(f'{x} in Spanish is {spanish[6]}') 
+    elif x == 7:
+        print(f'{x} in Spanish is {spanish[7]}') 
+    elif x == 8:
+        print(f'{x} in Spanish is {spanish[8]}') 
+    elif x == 9:
+        print(f'{x} in Spanish is {spanish[9]}') 
+    elif x == 10:
+        print(f'{x} in Spanish is {spanish[10]}') 
+
+
+
+if language == 'French':
+    if x == 1:
+        print(f'{x} in French is {french[1]}') 
+    elif x == 2:
+        print(f'{x} in French is {french[2]}')  
+    elif x == 3:
+        print(f'{x} in French is {french[3]}')  
+    elif x == 4:
+        print(f'{x} in French is {french[4]}') 
+    elif x == 5:
+        print(f'{x} in French is {french[5]}') 
+    elif x == 6:
+        print(f'{x} in French is {french[6]}') 
+    elif x == 7:
+        print(f'{x} in French is {french[7]}') 
+    elif x == 8:
+        print(f'{x} in French is {french[8]}') 
+    elif x == 9:
+        print(f'{x} in French is {french[9]}') 
+    elif x == 10:
+        print(f'{x} in French is {french[10]}') 
+
+
+
+if language == 'Te Reo':
+    if x == 1:
+        print(f'{x} in Te Reo is {te_reo[1]}') 
+    elif x == 2:
+        print(f'{x} in Te Reo is {te_reo[2]}')  
+    elif x == 3:
+        print(f'{x} in Te Reo is {te_reo[3]}')  
+    elif x == 4:
+        print(f'{x} in Te Reo is {te_reo[4]}') 
+    elif x == 5:
+        print(f'{x} in Te Reo is {te_reo[5]}') 
+    elif x == 6:
+        print(f'{x} in Te Reo is {te_reo[6]}') 
+    elif x == 7:
+        print(f'{x} in Te Reo is {te_reo[7]}') 
+    elif x == 8:
+        print(f'{x} in Te Reo is {te_reo[8]}') 
+    elif x == 9:
+        print(f'{x} in Te Reo is {te_reo[9]}') 
+    elif x == 10:
+        print(f'{x} in Te Reo is {te_reo[10]}') 
+
+
+if language == 'Danish':
+    if x == 1:
+        print(f'{x} in Danish is {danish[1]}') 
+    elif x == 2:
+        print(f'{x} in Danish is {danish[2]}')  
+    elif x == 3:
+        print(f'{x} in Danish is {danish[3]}')  
+    elif x == 4:
+        print(f'{x} in Danish is {danish[4]}') 
+    elif x == 5:
+        print(f'{x} in Danish is {danish[5]}') 
+    elif x == 6:
+        print(f'{x} in Danish is {danish[6]}') 
+    elif x == 7:
+        print(f'{x} in Danish is {danish[7]}') 
+    elif x == 8:
+        print(f'{x} in Danish is {danish[8]}') 
+    elif x == 9:
+        print(f'{x} in Danish is {danish[9]}') 
+    elif x == 10:
+        print(f'{x} in Danish is {danish[10]}') 
+
+        
+if language == 'Portuguese':
+    if x == 1:
+        print(f'{x} in Portuguese is {portuguese[1]}') 
+    elif x == 2:
+        print(f'{x} in Portuguese is {portuguese[2]}')  
+    elif x == 3:
+        print(f'{x} in Portuguese is {portuguese[3]}')  
+    elif x == 4:
+        print(f'{x} in Portuguese is {portuguese[4]}') 
+    elif x == 5:
+        print(f'{x} in Portuguese is {portuguese[5]}') 
+    elif x == 6:
+        print(f'{x} in Portuguese is {portuguese[6]}') 
+    elif x == 7:
+        print(f'{x} in Portuguese is {portuguese[7]}') 
+    elif x == 8:
+        print(f'{x} in Portuguese is {portuguese[8]}') 
+    elif x == 9:
+        print(f'{x} in Portuguese is {portuguese[9]}') 
+    elif x == 10:
+        print(f'{x} in Portuguese is {portuguese[10]}') 
+    #checks what the number is then calls that value in the dictionary, if the input is not 1 - 10 it prints Thats not 1 - 10 and loops.
+
