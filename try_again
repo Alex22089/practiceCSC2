@@ -1,14 +1,16 @@
 #Number In Different Language
 #Alex McCoy
 
-#dictionary for all the spanish values
+#dictionary for all the non-english values, this allows the code to call a value in these dictionaries when the english symbol number has been inputted.
 spanish = {1 : 'Uno' , 2 : 'Dos' , 3 : 'Tres' , 4 : 'Cuatro' , 5 : 'Cinco' , 6 : 'Seis' , 7 : 'Siete' , 8 : 'Ocho' , 9 : 'Nueve' , 10 : 'Diez'}
 french = {1 : 'Un' , 2 : 'Deux' , 3: 'Trois' , 4 : 'Quatre' , 5 : 'Cinq' , 6 : 'Six' , 7 : 'Sept' , 8 : 'Huit' , 9 : 'Neuf' , 10: 'Dix'}
 te_reo = {1 : 'Tahi' , 2 : 'Rua' , 3 : 'Toru' , 4 : 'Wha' , 5 : 'Rima' , 6 : 'Ono' , 7 : 'Whitu' , 8 : 'Waru' , 9 : 'Iwa' , 10 : 'Tekau'}
 danish = {1 : 'En' , 2 : 'To' , 3 : 'Tre' , 4 : 'Fire' , 5 : 'Fem' , 6 : 'Seks' , 7 : 'Syv' , 8 : 'Otte' , 9 : 'Ni' , 10 : 'Ti'}
 portuguese = {1 : 'Um' , 2 : 'Dois' , 3 : 'Tres' , 4 : 'Quatro' , 5 : 'Cinco' , 6 : 'Sei' , 7 : 'Sete' , 8 : 'Oito' , 9 : 'Nove' , 10 : 'Dez'}
 language = ""
-#checks if the input is an integer, if not, it prints That's not a number!, and reasks the question
+
+#the while true function lets the code repeat if the input is not correct.
+
 while True:
     try: 
         language = input('Spanish, French, Danish Te Reo, or Portuguese? ')
@@ -17,10 +19,10 @@ while True:
             continue
     except ValueError:
         print("That's not right!")
-        continue
+        continue      
     else:
         break
-
+#checks if the input is a correct language, and that it isnt a incorrect input, if it is; the program will repeat.
 while True:
     try: 
         x = int(input("Enter an integer 1 - 10: "))
@@ -33,6 +35,11 @@ while True:
     else:
         break
 #checks if the input is numeric if no it loops and re-asks
+
+
+#all the possible languages that calls its value in the dictionary. 
+
+#checks all dictionary values for spanish and calls the inputted number
 if language == 'Spanish':
     if x == 1:
         print(f'{x} in Spanish is {spanish[1]}') 
@@ -56,7 +63,7 @@ if language == 'Spanish':
         print(f'{x} in Spanish is {spanish[10]}') 
 
 
-
+#checks all dictionary values for french and calls the inputted number
 if language == 'French':
     if x == 1:
         print(f'{x} in French is {french[1]}') 
@@ -80,7 +87,7 @@ if language == 'French':
         print(f'{x} in French is {french[10]}') 
 
 
-
+#checks all dictionary values for te reo and calls the inputted number
 if language == 'Te Reo':
     if x == 1:
         print(f'{x} in Te Reo is {te_reo[1]}') 
@@ -103,7 +110,7 @@ if language == 'Te Reo':
     elif x == 10:
         print(f'{x} in Te Reo is {te_reo[10]}') 
 
-
+#checks all dictionary values for danish and calls the inputted number
 if language == 'Danish':
     if x == 1:
         print(f'{x} in Danish is {danish[1]}') 
@@ -126,7 +133,7 @@ if language == 'Danish':
     elif x == 10:
         print(f'{x} in Danish is {danish[10]}') 
 
-        
+#checks all dictionary values for portuguese and calls the inputted number
 if language == 'Portuguese':
     if x == 1:
         print(f'{x} in Portuguese is {portuguese[1]}') 
@@ -148,5 +155,11 @@ if language == 'Portuguese':
         print(f'{x} in Portuguese is {portuguese[9]}') 
     elif x == 10:
         print(f'{x} in Portuguese is {portuguese[10]}') 
-    #checks what the number is then calls that value in the dictionary, if the input is not 1 - 10 it prints Thats not 1 - 10 and loops.
+print('Thanks for learning!')
+
+yn = input('Do you want to learn some more? Y/N: ')
+while yn == 'Y':
+    continue
+if yn == 'N':
+    exit()
 
