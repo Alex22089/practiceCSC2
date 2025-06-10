@@ -8,13 +8,15 @@ te_reo = {1 : 'Tahi' , 2 : 'Rua' , 3 : 'Toru' , 4 : 'Wha' , 5 : 'Rima' , 6 : 'On
 danish = {1 : 'En' , 2 : 'To' , 3 : 'Tre' , 4 : 'Fire' , 5 : 'Fem' , 6 : 'Seks' , 7 : 'Syv' , 8 : 'Otte' , 9 : 'Ni' , 10 : 'Ti'}
 portuguese = {1 : 'Um' , 2 : 'Dois' , 3 : 'Tres' , 4 : 'Quatro' , 5 : 'Cinco' , 6 : 'Sei' , 7 : 'Sete' , 8 : 'Oito' , 9 : 'Nove' , 10 : 'Dez'}
 language = ""
+languages = 'danish' 'french' 'spanish' 'te reo' 'portuguese'
 
 #the while true function lets the code repeat if the input is not correct.
 
 while True:
     try: 
-        language = input('Spanish, French, Danish Te Reo, or Portuguese? ')
-        if language != 'Spanish' and language != 'French'and language != "Te Reo" and language != "Danish" and language != 'Portuguese':
+        lang = input('Spanish, French, Danish Te Reo, or Portuguese? ')
+        language = lang.lower()
+        if language not in languages:
             print("That's not a valid language!")
             continue
     except ValueError:
@@ -40,7 +42,7 @@ while True:
 #all the possible languages that calls its value in the dictionary. 
 
 #checks all dictionary values for spanish and calls the inputted number
-if language == 'Spanish':
+if language == 'spanish':
     if x == 1:
         print(f'{x} in Spanish is {spanish[1]}') 
     elif x == 2:
@@ -64,7 +66,7 @@ if language == 'Spanish':
 
 
 #checks all dictionary values for french and calls the inputted number
-if language == 'French':
+if language == 'french':
     if x == 1:
         print(f'{x} in French is {french[1]}') 
     elif x == 2:
@@ -88,7 +90,7 @@ if language == 'French':
 
 
 #checks all dictionary values for te reo and calls the inputted number
-if language == 'Te Reo':
+if language == 'te reo':
     if x == 1:
         print(f'{x} in Te Reo is {te_reo[1]}') 
     elif x == 2:
@@ -111,7 +113,7 @@ if language == 'Te Reo':
         print(f'{x} in Te Reo is {te_reo[10]}') 
 
 #checks all dictionary values for danish and calls the inputted number
-if language == 'Danish':
+if language == 'danish':
     if x == 1:
         print(f'{x} in Danish is {danish[1]}') 
     elif x == 2:
@@ -134,7 +136,7 @@ if language == 'Danish':
         print(f'{x} in Danish is {danish[10]}') 
 
 #checks all dictionary values for portuguese and calls the inputted number
-if language == 'Portuguese':
+if language == 'portuguese':
     if x == 1:
         print(f'{x} in Portuguese is {portuguese[1]}') 
     elif x == 2:
@@ -162,4 +164,5 @@ while yn == 'Y':
     continue
 if yn == 'N':
     exit()
-
+    
+#NOT WORKING NEED TO FIX ASAP
