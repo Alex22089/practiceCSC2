@@ -1,0 +1,101 @@
+"""This File allows users to enter a chosen lanugage fron the 5 options, and then a number 1 - 10 to learn different languages."""
+# Number In Different Language
+# Alex McCoy
+
+
+
+
+# dictionary for all the non-english values, this allows the code to call a value in these dictionaries when the english symbol number has been inputted.
+spanish = {1: 'Uno', 2: 'Dos', 3: 'Tres', 4: 'Cuatro', 5: 'Cinco', 6: 'Seis', 7: 'Siete', 8: 'Ocho', 9: 'Nueve', 10: 'Diez'}
+french = {1: 'Un', 2: 'Deux', 3: 'Trois', 4: 'Quatre', 5: 'Cinq', 6: 'Six', 7: 'Sept', 8: 'Huit', 9: 'Neuf', 10: 'Dix'}
+te_reo = {1: 'Tahi', 2: 'Rua', 3: 'Toru', 4: 'Wha', 5: 'Rima', 6: 'Ono', 7: 'Whitu', 8: 'Waru', 9: 'Iwa', 10: 'Tekau'}
+danish = {1: 'En', 2: 'To', 3: 'Tre', 4: 'Fire', 5: 'Fem', 6: 'Seks', 7: 'Syv', 8: 'Otte', 9: 'Ni', 10: 'Ti'}
+portuguese = {1: 'Um', 2: 'Dois', 3: 'Trs', 4: 'Quatro', 5: 'Cinco', 6: 'Sei', 7: 'Sete', 8: 'Oito', 9: 'Nove', 10: 'Dez'}
+language_input = ""
+languages = ['danish','french','spanish','te reo','portuguese']
+correct_language = False
+correct_x = False
+play_again = True
+
+
+def print_answer(language, x):
+    if language == 'spanish':
+        language_input = spanish
+    if language == 'french':
+        language_input = french
+    if language == 'danish':
+        language_input = danish
+    if language == 'te reo':
+        language_input = te_reo
+    if language == 'portuguese':
+        language_input = portuguese
+
+    # checks all dictionary values for any language and calls the inputted number
+    print(f'{x} in {language} is {language_input[x]}')
+# the while true function lets the code repeat if the input is not correct.
+
+def check_language(lang):
+   
+    try:
+        language = lang.lower()    
+        if language not in languages:
+            print("That's not a valid language!")
+            return False
+        else:
+            return True
+    except ValueError:
+        print("That's not right!")
+        return False  
+
+
+# checks if the input is a correct language, and that it isnt a incorrect input, if it is; the program will repeat.
+def check_integer(x):
+    try:
+        if x > 10 or x <= 0:
+            print("That's not 1 to 10!")
+            return False
+        else:
+            return True
+    except ValueError:
+        print("That's not a number!")
+        return False  
+
+def check_play(answer):
+    try:
+        if answer == ["No", "N", "no", "NO"]:
+            return False
+        elif answer == ["Yes", "Y", "yes", "YES"]:
+            return True
+    except ValueError:
+        print("That's not a correct answer!")
+        return False  
+    
+    
+#Main code
+
+while play_again == True:
+
+    while correct_language == False:
+        lang = input('Spanish, French, Danish Te Reo, or Portuguese? ')
+        correct_language = check_language(lang)
+
+    while correct_x == False:
+        x = int(input("Enter an integer 1 - 10: "))
+        correct_x = check_integer(x)
+
+# checks if the input is numeric if no it loops and re-asks
+    language = lang.lower()
+    print_answer(language,x)
+
+    ask_play_again = input('Do you want to play again? ')
+    play_again = check_play(ask_play_again)
+    correct_language = False
+    correct_x = False
+
+
+
+    # all the possible languages that calls its value in the dictionary.
+
+print('Thanks for learning!')
+
+

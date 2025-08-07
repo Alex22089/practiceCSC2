@@ -1,44 +1,65 @@
-#Number In Different Language
-#Alex McCoy
+"""This File allows users to enter a chosen lanugage fron the 5 options, and then a number 1 - 10 to learn different languages."""
+# Number In Different Language
+# Alex McCoy
 
-#dictionary for all the spanish values
-spanish = {1 : 'Uno' , 2 : 'Dos' , 3 : 'Tres' , 4 : 'Cuatro' , 5 : 'Cinco' , 6 : 'Seis' , 7 : 'Siete' , 8 : 'Ocho' , 9 : 'Nueve' , 10 : 'Diez'}
+# dictionary for all the non-english values, this allows the code to call a value in these dictionaries when the english symbol number has been inputted.
+spanish = {1: 'Uno', 2: 'Dos', 3: 'Tres', 4: 'Cuatro', 5: 'Cinco', 6: 'Seis', 7: 'Siete', 8: 'Ocho', 9: 'Nueve', 10: 'Diez'}
+french = {1: 'Un', 2: 'Deux', 3: 'Trois', 4: 'Quatre', 5: 'Cinq', 6: 'Six', 7: 'Sept', 8: 'Huit', 9: 'Neuf', 10: 'Dix'}
+te_reo = {1: 'Tahi', 2: 'Rua', 3: 'Toru', 4: 'Wha', 5: 'Rima', 6: 'Ono', 7: 'Whitu', 8: 'Waru', 9: 'Iwa', 10: 'Tekau'}
+danish = {1: 'En', 2: 'To', 3: 'Tre', 4: 'Fire', 5: 'Fem', 6: 'Seks', 7: 'Syv', 8: 'Otte', 9: 'Ni', 10: 'Ti'}
+portuguese = {1: 'Um', 2: 'Dois', 3: 'Três', 4: 'Quatro', 5: 'Cinco', 6: 'Sei', 7: 'Sete', 8: 'Oito', 9: 'Nove', 10: 'Dez'}
+language = ""
+languages = 'danish' 'french' 'spanish' 'te reo' 'portuguese'
 
+def print_answer (language, value):
+    if language == 'spanish':
+        language_list = spanish
+    if language == 'french':
+        language_list = french
+    if language == 'te_reo':
+        language_list = te_reo
+    if language == 'danish':
+        language_list = danish
+    if language == 'portuguese':
+        language_list = portuguese
+# the while true function lets the code repeat if the input is not correct.
+    while True: 
 
+        while True:
+            try: 
+                lang = input('Spanish, French, Danish Te Reo, or Portuguese? ')
+                language = lang.lower()
+                if language not in languages:
+                    print("That's not a valid language!")
+                    continue
+            except ValueError:
+                print("That's not right!")
+                continue      
+            else:
+                break
+    # checks if the input is a correct language, and that it isnt a incorrect input, if it is; the program will repeat.
+        while True:
+            try: 
+                x = int(input("Enter an integer 1 - 10: "))
+                if x > 10 or x <= 0:
+                    print("That's not 1 to 10!")
+                    continue
+            except ValueError:
+                print("That's not a number!")
+                continue
+            else:
+                break
+    # checks if the input is numeric if no it loops and re-asks    
+        print(f'{value} in {language.title()} is {language_list[value]}')
+        # all the possible languages that calls its value in the dictionary. 
+        print('Thanks for learning!')
 
-#checks if the input is an integer, if not, it prints That's not a number!, and reasks the question
-while True:
-    try: 
-        x = int(input("Enter a integer 1 - 10: "))
-        if x > 10 or x <= 0:
-            print("That's not 1 to 10!")
+# yn is an input that asks the user to enter Y or N, ynu converts the input to uppercase, eg. y -> Y
+        yn = input('Do you want to learn some more? Y/N: ')
+        ynu = yn.upper()
+        # if the users input is Y the program continues the loop.
+        if ynu == "Y":
             continue
-    except ValueError:
-        print("That's not a number!")
-        continue
-    else:
-        break
-
-#checks if the input is numeric if no it loops and re-asks
-if x == 1:
-    print(f'{x} in Spanish is {spanish[1]}') 
-elif x == 2:
-    print(f'{x} in Spanish is {spanish[2]}')  
-elif x == 3:
-    print(f'{x} in Spanish is {spanish[3]}')  
-elif x == 4:
-    print(f'{x} in Spanish is {spanish[4]}') 
-elif x == 5:
-    print(f'{x} in Spanish is {spanish[5]}') 
-elif x == 6:
-    print(f'{x} in Spanish is {spanish[6]}') 
-elif x == 7:
-    print(f'{x} in Spanish is {spanish[7]}') 
-elif x == 8:
-    print(f'{x} in Spanish is {spanish[8]}') 
-elif x == 9:
-    print(f'{x} in Spanish is {spanish[9]}') 
-elif x == 10:
-    print(f'{x} in Spanish is {spanish[10]}') 
-    #checks what the number is then calls that value in the dictionary, if the input is not 1 - 10 it prints Thats not 1 - 10 and loops.
-
+        # anything other than Y will end break out of the loop, ending the program.
+        else:
+            break
