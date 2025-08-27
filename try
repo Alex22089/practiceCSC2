@@ -12,10 +12,11 @@ te_reo = {1: 'Tahi', 2: 'Rua', 3: 'Toru', 4: 'Wha', 5: 'Rima', 6: 'Ono', 7: 'Whi
 danish = {1: 'En', 2: 'To', 3: 'Tre', 4: 'Fire', 5: 'Fem', 6: 'Seks', 7: 'Syv', 8: 'Otte', 9: 'Ni', 10: 'Ti'}
 portuguese = {1: 'Um', 2: 'Dois', 3: 'Três', 4: 'Quatro', 5: 'Cinco', 6: 'Sei', 7: 'Sete', 8: 'Oito', 9: 'Nove', 10: 'Dez'}
 language_input = ""
-languages = ['Danish','French','Spanish','Te reo','Portuguese']
+languages = ['Danish','French','Spanish','Te Reo','Portuguese']
 correct_language = False
 correct_x = False
 play_again = True
+correct_play = False
 
 def print_answer(language, x):
     if language == 'Spanish':
@@ -24,7 +25,7 @@ def print_answer(language, x):
         language_input = french
     if language == 'Danish':
         language_input = danish
-    if language == 'Te reo':
+    if language == 'Te Reo':
         language_input = te_reo
     if language == 'Portuguese':
         language_input = portuguese
@@ -62,13 +63,20 @@ def check_integer(x):
 
 def check_play(answer):
     try:
-        if answer in ["No", "N", "no", "NO", "n"]:
-            return False
-        elif answer in ["Yes", "Y", "yes", "YES", "y"]:
-            return True
-        else:
-            print("That's not a correct answer!")
-            return False  
+        while correct_play == False:
+            if answer in ["No", "N", "no", "NO", "n", "nah"]:
+                correct_play == True
+                return False
+            elif answer in ["Yes", "Y", "yes", "YES", "y", "yah", "yeah", "ye", "yea"]:
+                correct_play == True
+                return True
+            else:
+                print("Please answer yes or no!")
+                answer = input('Do you want to play again? ')
+              
+    except ValueError:
+        print("Please answer yes or no!")
+        return True 
     
     
 #Main code
@@ -76,7 +84,7 @@ def check_play(answer):
 while play_again == True:
 
     while correct_language == False:
-        lang = input('Spanish, French, Danish Te Reo, or Portuguese? ')
+        lang = input('Spanish, French, Danish, Te Reo, or Portuguese? ')
         correct_language = check_language(lang)
 
     while correct_x == False:
@@ -86,6 +94,7 @@ while play_again == True:
             print("That's not a number!")
             continue
         correct_x = check_integer(x)
+
 
 # checks if the input is numeric if no it loops and re-asks
     language = lang.title()
